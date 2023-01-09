@@ -1,6 +1,21 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Pipe: currency</h5>
-    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <h5 class="card-title text-center">uppercase</h5>
+    <form autocomplete="off" class="mt-4">
+      <div class="mb-3">
+        <label for="txtValor" class="form-label">Valor:</label>
+        <input [(ngModel)]="valor" name="txtValor" type="number" class="form-control" id="txtValor">
+      </div>
+      <div class="mb-3">
+        <select [(ngModel)]="tipoMoneda" name="sltTipo" class="form-select" aria-label="Default select example">
+          <option value="" disabled>Seleccione tipo de moneda</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select>
+      </div>
+      <div class="alert alert-primary" role="alert">
+        Resultado: <span *ngIf="tipoMoneda">{{valor | currency:tipoMoneda}}</span>
+      </div>
+    </form>
   </div>
 </div>

@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   ]
 })
 export class FormCurrencyComponent {
-
+  valor!: number;
+  tipoMoneda: string = "";
 }
